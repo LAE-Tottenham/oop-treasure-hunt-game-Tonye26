@@ -3,12 +3,13 @@ class Player():
         self.name = given_name
         self.health = 100
         self.energy = 100
-        self.inventory_max_weight = 50
+        self.__inventory_max_weight = 50
         self.inventory = []
         # add more atributes as needed
 
     def calculate_inventory_size(self):
         # write code here
+        
         pass
 
     def add_item(self, item_instance):
