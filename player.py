@@ -1,16 +1,13 @@
+import random
 class Player():
     def __init__(self, given_name):
         self.name = given_name
         self.health = 100
         self.energy = 100
-        self.__inventory_max_weight = 50
+        self.inventory_max_weight = 50
         self.inventory = []
         # add more atributes as needed
 
-    def calculate_inventory_size(self):
-        # write code here
-        
-        pass
 
     def add_item(self, item_instance):
         if self.calculate_inventory_size() > self.inventory_max_weight:
@@ -24,5 +21,9 @@ class Player():
         elif item_instance.type == "medicine":
             self.health += 50
         # add more code here
+    def dodge(self,enemy):
+        a=random.randint(0,100)
+        if a>enemy.accuracy:
+            print("You have successfully dodged")
 
     # add more methods as needed

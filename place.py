@@ -1,3 +1,4 @@
+from player import Player
 class Place():
     def __init__(self, given_name, given_size, locked=False):
         # locked=False means that the locked parameter will be False by default if not provided.
@@ -6,13 +7,14 @@ class Place():
         self.locked = locked
         self.next_places = []
         self.items = []
+        self.enemies=[]
         # add more atributes as needed
 
     def add_next_place(self, place_instance):
         self.next_places.append(place_instance)
 
     def add_item(self, item_instance):
-        # add code here
+        self.items.append(item_instance)
         pass
 
     def show_next_places(self):
@@ -20,5 +22,15 @@ class Place():
         for place in self.next_places:
             # remember that next_places is a list of Place instances hence why we can use place.name
             print(place.name)
+    
+    def add_enemy(self,enemy_instance):
+        self.enemies.append(enemy_instance)
+    
+    def open(self,Player):
+        if self.locked==True:
+            if Player.inventory.count("lockpick"):
+                self.locked==False
+                Player.inventory.remove("lockpick")
+
 
     # add more methods as needed
