@@ -25,5 +25,8 @@ class Player():
         a=random.randint(0,100)
         if a>enemy.accuracy:
             print("You have successfully dodged")
+    
+    def attack(self,Enemy,Weapon):
+        Weapon.use(Weapon,Enemy)
 
     # add more methods as needed

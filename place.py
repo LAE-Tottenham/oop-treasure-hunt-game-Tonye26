@@ -1,4 +1,3 @@
-from player import Player
 class Place():
     def __init__(self, given_name, given_size, locked=False):
         # locked=False means that the locked parameter will be False by default if not provided.

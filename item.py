@@ -8,9 +8,9 @@ class Weapon(Item):
     def __init__(self, name,damage,type="Weapon"):
         super().__init__(name, type)
         self.damage=damage
-    def use(self,enemy):
-        enemy.health-=self.damage
-        print(f"{enemy.name} has taken {self.damage} damage")
+    def use(self,Enemy):
+        Enemy.health-=self.damage
+        print(f"{Enemy.name} has taken {self.damage} damage")
 
 class food(Item):
     def __init__(self, name,energy,type="Food"):
